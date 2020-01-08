@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/fe-general" mode="merge"/>
+    <filter root="/content/fe-general" mode="merge"/>
+    <filter root="/content/dam/fe-general" mode="merge"/>
+    <filter root="/content/experience-fragments/fe-general" mode="merge"/>
+</workspaceFilter>
