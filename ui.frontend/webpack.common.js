@@ -7,7 +7,8 @@ const TSConfigPathsPlugin     = require('tsconfig-paths-webpack-plugin');
 const TSLintPlugin            = require('tslint-webpack-plugin');
 const CopyWebpackPlugin       = require('copy-webpack-plugin');
 const { CleanWebpackPlugin }  = require('clean-webpack-plugin');
-
+const clientlib               = require("aem-clientlib-generator"); // todo use instead of FileManagerPlugin
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const SOURCE_ROOT = __dirname + '/src/main/webpack';
 
 module.exports = {
@@ -94,7 +95,18 @@ module.exports = {
             }),
             new CopyWebpackPlugin([
                 { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/resources' }
-            ]) 
+            ]),
+            new FileManagerPlugin({
+                onEnd: {
+                    copy: [
+                        { source: './dist/clientlib-site/site.css',
+                          destination: '../ui.apps/src/main/content/jcr_root/apps/fe-general' + '/clientlibs/clientlib-site/css' },
+                    ]
+                }
+            })
+            // ,clientlib(arrProps, { verbose: true }, function() {
+            //     console.log("generator has finished");
+            // })
         ],
         stats: {
             assetsSort: "chunks",
