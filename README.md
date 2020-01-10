@@ -1,17 +1,40 @@
-# Sample AEM project template
+# FE Process for general webpack set up
 
 This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
 
-## Modules
+## Try it out
 
-The main parts of the template are:
+To check synchronisation:
 
-* core: Java bundle containing all core functionality like OSGi services, listeners or schedulers, as well as component-related Java code such as servlets or request filters.
-* ui.apps: contains the /apps (and /etc) parts of the project, ie JS&CSS clientlibs, components, templates, runmode specific configs as well as Hobbes-tests
-* ui.content: contains sample content using the components from the ui.apps
-* ui.tests: Java bundle containing JUnit tests that are executed server-side. This bundle is not to be deployed onto production.
-* ui.launcher: contains glue code that deploys the ui.tests bundle (and dependent bundles) to the server and triggers the remote JUnit execution
-* ui.frontend: an optional dedicated front-end build mechanism based on Webpack
+
+1. Go to to ui.frontend and install dependencies:
+    ```
+        git checkout develop
+        git pull
+        cd ui.frontend 
+        npm install
+     ```      
+2. Deploy project with maven
+
+3. Start synch
+
+    ```
+     npm run start
+    ```
+* Open http://localhost:4502/editor.html/content/fe-general/us/en.html and add text component
+* Open text.scss and set "background: green;", save
+* Check the color applied at Proxy 
+    * Open http://localhost:3000/editor.html/content/fe-general/us/en.html
+    * Verify new styles were inject into the page without reload
+
+    
+* Check the color applied in AEM 
+    * Open http://localhost:4502/editor.html/content/fe-general/us/en.html
+    * run Command+Shift+R
+    * verify new styles applied
+
+
+
 
 ## How to build
 
