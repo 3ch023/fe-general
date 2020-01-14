@@ -12,11 +12,9 @@
   "scripts": {
     "dev": "webpack -d --env dev --config ./webpack.dev.js && clientlib --verbose",
     "prod": "webpack -p --config ./webpack.prod.js && clientlib --verbose",
-    "start": "concurrently \"npm run aemfed\" \"npm run webpack:watch:css\"",
+    "start": "concurrently \"npm run aemfed\" \"npm run webpack:watch\"",
     "aemfed": "aemfed -t http://admin:admin@localhost:4502 -w ../ui.apps/src/main/content/jcr_root",
-    "webpack:watch": "concurrently \"npm run webpack:watch:css\" \"npm run webpack:watch:js\"",
-    "webpack:watch:js": "webpack --config ./webpack.dev.js --watch",
-    "webpack:watch:css": "webpack --config ./webpack.dev.js --watch"
+    "webpack:watch": "webpack --config ./webpack.watch.js --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
