@@ -1,6 +1,19 @@
 # FE Process for general webpack set up
 
-This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
+This is a FE General Demo project. 
+
+
+## Description
+
+In maven Build:
+ - Webpack is triggered. -> result is in /dist
+ - Clientlibs generator is triggered -> result is copied to ui.apps and turned into clientlib (all config nodes generated) 
+In Dev mode:
+ - Webpack is in watch, when triggered. -> result is in /dist
+ - result (.js and .css) copied to ui.apps
+ - aemfed watches ui.apps -> files deployed to aem
+Webpack is triggered.
+Then file 
 
 ## Try it out
 

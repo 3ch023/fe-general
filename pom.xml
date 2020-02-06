@@ -22,14 +22,14 @@
     <description>AEM Frontend Build Process: General</description>
 
     <modules>
-        <module>all</module>
+        <module>ui.frontend</module>
         <module>core</module>
         <module>ui.apps</module>
+        <module>all</module>
         <module>ui.content</module>
         <module>it.tests</module>
         <module>it.launcher</module>
         <module>repository-structure</module>
-    <module>ui.frontend</module>
   </modules>
 
     <properties>

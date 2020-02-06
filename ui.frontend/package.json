@@ -12,7 +12,9 @@
   "scripts": {
     "dev": "webpack -d --env dev --config ./webpack.dev.js && clientlib --verbose",
     "prod": "webpack -p --config ./webpack.prod.js && clientlib --verbose",
-    "start": "webpack-dev-server --open --config ./webpack.dev.js"
+    "start": "concurrently \"npm run aemfed\" \"npm run webpack:watch\"",
+    "aemfed": "aemfed -t http://admin:admin@localhost:4502 -w ../ui.apps/src/main/content/jcr_root",
+    "webpack:watch": "webpack --config ./webpack.watch.js --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -20,12 +22,14 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
     "acorn": "^6.1.0",
     "aem-clientlib-generator": "^1.4.3",
+    "aemfed": "^0.1.1",
     "autoprefixer": "^9.2.1",
     "browserslist": "^4.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.0.0",
     "cssnano": "^4.1.10",
+    "filemanager-webpack-plugin": "^2.0.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.11.0",
@@ -48,7 +52,9 @@
     "webpack-import-glob-loader": "^1.6.3",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "concurrently": "^5.0.2"
+  },
   "browserslist": [
     "last 2 version",
     "> 1%"
