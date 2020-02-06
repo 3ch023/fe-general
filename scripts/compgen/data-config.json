@@ -9,7 +9,7 @@
     },
     "name": "demo-comp",
     "title": "Demo Component",
-    "group": "NewCo Base",
+    "group": "fe-general.Content",
     "type": "content",
     "options": {
         "js": true,
@@ -144,48 +144,6 @@
                     "step": "1",
                     "value": "{Long}20"
                 }
-            },
-            {
-                "field": "imageTest",
-                "type": "image",
-                "label": "Image Test",
-                "json-expose": true
-            },
-            {
-                "field": "colors",
-                "type": "multifield",
-                "label": "Colors",
-                "json-expose": true,
-                "items": [
-                    {
-                        "type": "textfield",
-                        "label": "Color"
-                    }
-                ]
-            },
-            {
-                "field": "links",
-                "type": "multifield",
-                "model-name": "DemoLink",
-                "use-existing-model": false,
-                "label": "Links",
-                "json-expose": true,
-                "items": [
-                    {
-                        "field": "path",
-                        "type": "pathfield",
-                        "label": "Path",
-                        "description": "Path to the page",
-                        "json-expose": true
-                    },
-                    {
-                        "field": "label",
-                        "type": "textfield",
-                        "label": "Label",
-                        "description": "Label to display on the link",
-                        "json-expose": true
-                    }
-                ]
             }
         ]
     }
